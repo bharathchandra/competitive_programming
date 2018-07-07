@@ -1,0 +1,23 @@
+def is_anagram(str1, str2):
+    x= str1.lower()
+    y=str2.lower()
+    
+    list_str1 = list(x)
+    list_str1.sort()
+    list_str2 = list(y)
+    list_str2.sort()
+
+    return (list_str1==list_str2)
+
+print(is_anagram('anagram','nagaram'))
+print(is_anagram('Keep', 'Peek'))
+print(is_anagram('Mother In Law',' Hitler Woman'))
+print(is_anagram('School Master', 'The Classroom'))
+print(is_anagram('ASTRONOMERS','NOMORESTARS'))
+print(is_anagram('Toss', 'Shot'))
+print(is_anagram('joy', 'enjoy'))
+print(is_anagram('Debit Card', 'Bad Credit'))
+print(is_anagram('SiLeNt CAT', 'LisTen AcT'))
+print(is_anagram('Mother In Law',' Hitler Woman'))
+
+
