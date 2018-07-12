@@ -1,0 +1,36 @@
+import java.util.*;
+class Solotion {
+    public  static  void  uniqueMorseRepresentations(String[] words) 
+    {
+        String[] MORSE = new String[]{".-","-...","-.-.","-..",".","..-.","--.",
+                         "....","..",".---","-.-",".-..","--","-.",
+                         "---",".--.","--.-",".-.","...","-","..-",
+                         "...-",".--","-..-","-.--","--.."};
+
+        Set<String> seen = new HashSet();
+        for (String word: words) {
+            StringBuilder code = new StringBuilder();
+            for (char c: word.toCharArray())
+                code.append(MORSE[c - 'a']);
+            seen.add(code.toString());
+        }
+
+        System.out.println(seen.size());
+        
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String a[] = {"gin", "zen", "gig", "msg"};
+        String b[] = {"a", "z", "g", "m"};
+        String c[] = {"bhi", "vsv", "sgh", "vbi" };
+        String d[] = {"a", "b", "c", "d"};
+        String e[] = {"hig", "sip", "pot"} ;
+        uniqueMorseRepresentations(a);
+        uniqueMorseRepresentations(b);
+        uniqueMorseRepresentations(c);
+        uniqueMorseRepresentations(d);
+        uniqueMorseRepresentations(e);
+        
+    }
+}
