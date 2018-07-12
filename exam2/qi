@@ -1,0 +1,57 @@
+import java.util.*;
+class Solution
+{
+    public  static  void  minTotalDistance(int[][] grid) 
+    {
+    int m=grid.length;
+    int n=grid[0].length;
+ 
+    ArrayList<Integer> cols = new ArrayList<Integer>();
+    ArrayList<Integer> rows = new ArrayList<Integer>();
+    for(int i=0; i<m; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+           if(grid[i][j]==1)
+           {
+               cols.add(j);
+               rows.add(i);
+           }
+        }
+    }
+ 
+    int sum=0;
+    
+ 
+    for(Integer i: rows)
+    {
+        sum += Math.abs(i - rows.get(rows.size()/2));    
+    }
+ 
+    Collections.sort(cols);
+ 
+    for(Integer i: cols)
+    {
+        sum+= Math.abs(i-cols.get(cols.size()/2));
+    }
+ 
+     System.out.println(sum);
+}
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int m= sc.nextInt();
+        int n = sc.nextInt();
+        int a[][] = new int[m][n];
+        for (int i=0;i<m;i++)
+        {
+            for (int j=0;j<n;j++)
+            {
+                a[i][j]=sc.nextInt();
+            }
+        }
+        minTotalDistance(a); 
+        
+    }
+}
